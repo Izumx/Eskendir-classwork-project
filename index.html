@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Results summary component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        font-family: "Hanken Grotesk", sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        width: 700px;
+        height: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0px 10px 20px hsl(256,72%, 46%);
+      }
+      .card-1 {
+        background: linear-gradient(
+          hsl(252, 100%, 67%),
+          hsl(241, 81%, 54%)
+        );
+        color: white;
+        width: 50%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .result {
+        opacity: 0.7;
+        letter-spacing: 2px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .round {
+        background: radial-gradient(circle at top, hsl(256, 72%, 46%), hsl(241, 81%, 54%));
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .head h1 {
+        font-size: 60px;  
+      }
+      .of span {
+        opacity: 0.7;
+        font-weight: 700;
+      }
+      .Great {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .card-1 p {
+        text-align: center;
+        font-size: 14px;
+        opacity: 0.7;
+        line-height: 1.5;
+      }
+      .card-2 {
+        background-color: hsl(0, 0%, 100%);
+        width: 50%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .card-2 b {
+        font-size: 18px;
+        margin-bottom: 20px;  
+      }
+      .reaction, .memory, .verbal, .visual {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: hsl(210, 60%, 98%);
+        padding: 10px 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+      }
+      .reaction-1, .memory-1, .verbal-1, .visual-1 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .reaction-1 span, .memory-1 span, .verbal-1 span, .visual-1 span {
+        color: hsl(224, 30%, 27%);
+        font-weight: 700;
+      }
+      .reaction-1 img, .memory-1 img, .verbal-1 img, .visual-1 img {
+        width: 20px;
+        height: 20px;
+      }
+      .reaction {
+        background-color: rgba(252, 0, 0, 0.212);
+      }
+      .memory {
+        background-color: rgba(255, 189, 0, 0.212);
+      }
+      .verbal {
+        background-color: rgba(0, 255, 150, 0.212);
+      }
+      .visual {
+        background-color: rgba(0, 112, 255, 0.212);
+      }
+      .btn {
+        border-radius: 15px;
+        width: 100%;
+        padding: 15px;
+        background: hsl(224, 30%, 27%);
+        color: white;
+      }
+      .reaction span, .memory span, .verbal span, .visual span {
+        font-size: 14px;
+      }
+      .reaction span {
+        color: hsl(0, 100%, 67%);
+      }
+      .memory span {
+        color: hsl(39, 100%, 56%);
+      }
+      .verbal span {
+        color: hsl(166, 100%, 37%);
+      }
+      .visual span {
+        color: hsl(234, 85%, 45%);
+      }
+      .sum-1 p {
+        font-size: 14px;
+        color: hsl(224, 30%, 27%);
+        font-weight: 600;
+      }
+      .sum-1 b {
+        color: hsl(0, 0%, 0%);
+      }
+      .btn:hover {
+         background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+        cursor: pointer;
+      }
+      .btn:active {
+        background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+        transform: scale(0.97);
+      }
+      .btn {
+        border: none;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 1.2px;
+      }
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          width: 90%;
+          height: auto;
+        }
+        .card-1, .card-2 {
+          width: 100%;
+        }
+        .card-1 {
+          border-radius: 20px 20px 0 0;
+        }
+        .card-2 {
+          border-radius: 0 0 20px 20px;
+        }
+      }
+      .card-1 {
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card-1">
+        <p class="result">Your Result</p>
+        <div class="round">
+          <div class="head">
+            <h1>76</h1>
+          </div>
+          <div class="of">
+            <span>of 100</span>
+          </div>
+        </div>
+        <h3 class="Great">Great</h3>
+        <p>
+          You scored higher than 65% of the people who have taken these tests.
+        </p>
+      </div>
+      <div class="card-2">
+        <b>Summary</b>
+        <div class="reaction">
+          <div class="reaction-1">
+            <img src="assets/images/icon-reaction.svg" alt="reaction" />
+            <span>Reaction</span>
+          </div>
+          <div class="sum-1">
+            <p><b>80</b> / 100</p>
+          </div>
+        </div>
+        <div class="memory">
+          <div class="memory-1">
+            <img src="assets/images/icon-memory.svg" alt="memory" />
+            <span>Memory</span>
+          </div>
+          <div class="sum-1">
+            <p><b>92</b> / 100</p>
+          </div>
+        </div>
+        <div class="verbal">
+          <div class="verbal-1">
+            <img src="assets/images/icon-verbal.svg" alt="verbal" />
+            <span>Verbal</span>
+          </div>
+          <div class="sum-1">
+            <p><b>61</b> / 100</p>
+          </div>
+        </div>
+        <div class="visual">
+          <div class="visual-1">
+            <img src="assets/images/icon-visual.svg" alt="visual" />
+            <span>Verbal</span>
+          </div>
+          <div class="sum-1">
+            <p><b>73</b> / 100</p>
+          </div>
+        </div>
+        <button class="btn">Continue</button>
+      </div>
+    </div>
+  </body>
+</html>
